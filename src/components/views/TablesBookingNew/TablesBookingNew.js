@@ -4,7 +4,7 @@ import styles from './TablesBookingNew.module.scss';
 const TablesBookingNew = () => {
   <div className={styles.component}>
     <h2>
-      TablesBookingId view
+      TablesBookingNew view
     </h2>
   </div>;
 };
