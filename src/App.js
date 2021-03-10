@@ -19,7 +19,7 @@ function App() {
       <MainLayout>
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage} />
-          <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />s
+          <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
           <Route exact path={process.env.PUBLIC_URL + '/tables'} component={Tables} />
           <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} component={TablesBookingId} />
           <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} component={TablesBookingNew} />
