@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './WaiterOrderId.module.scss';
 
-const WaiterOrderId = () => {
+const WaiterOrderId = () => (
   <div className={styles.component}>
     <h2>
       WaiterOrderId view
     </h2>
-  </div>;
-};
+  </div>
+);
 
 export default WaiterOrderId;

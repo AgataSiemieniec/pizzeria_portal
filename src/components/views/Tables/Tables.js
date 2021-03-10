@@ -3,7 +3,7 @@ import styles from './Tables.module.scss';
 import { Link } from 'react-router-dom';
 
 
-const Tables = () => {
+const Tables = () => (
   <div className={styles.component}>
     <h2>
       Tables view
@@ -12,7 +12,7 @@ const Tables = () => {
     <Link to={`${process.env.PUBLIC_URL}/tables/booking/new`}>Tables booking new</Link>
     <Link to={`${process.env.PUBLIC_URL}/tables/events/:id`}>Tables events id</Link>
     <Link to={`${process.env.PUBLIC_URL}/tables/events/new`}>Tables events new</Link>
-  </div>;
-};
+  </div>
+);
 
 export default Tables;
