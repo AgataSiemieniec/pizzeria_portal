@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './Login.module.scss';
+import Grid from '@material-ui/core/Grid';
 
 const Login = () => (
-  <div className={styles.component}>
-    <h2>
-      Login view
-    </h2>
-  </div>
+  <Grid container className={styles.component}>
+
+  </Grid>
 );
 
 export default Login;
