@@ -8,6 +8,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+// import Grid from '@material-ui/core/Grid';
+// import DateFnsUtils from '@date-io/date-fns';
+// import {
+//   MuiPickersUtilsProvider,
+//   KeyboardTimePicker,
+//   KeyboardDatePicker,
+// } from '@material-ui/pickers';
 
 const demotableContent = [
   {
@@ -96,41 +103,84 @@ const renderActions = status => {
   }
 };
 
-const Tables = () => (
-  <Paper className={styles.component}>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Time</TableCell>
-          <TableCell>Table 1</TableCell>
-          <TableCell>Table 2</TableCell>
-          <TableCell>Table 3</TableCell>
-          <TableCell>Table 4</TableCell>
-          <TableCell>Table 5</TableCell>
-          <TableCell>Table 6</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {demotableContent.map(row => (
-          <TableRow key={row.hour}>
-            <TableCell component="th" scope="row">
-              {row.hour}
-            </TableCell>
-            {row.tables.map((table) => (
-              <TableCell key={row.table} component="th" scope="row">
-                {renderActions(table.status)}
-              </TableCell>
-            ))}
+const Tables = () => {
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  return (
+    <Paper className={styles.component}>
+      {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <Grid container justify="space-around">
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="MM/dd/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            label="Date picker inline"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',
+            }}
+          />
+          <KeyboardDatePicker
+            margin="normal"
+            id="date-picker-dialog"
+            label="Date picker dialog"
+            format="MM/dd/yyyy"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',
+            }}
+          />
+          <KeyboardTimePicker
+            margin="normal"
+            id="time-picker"
+            label="Time picker"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change time',
+            }}
+          />
+        </Grid>
+      </MuiPickersUtilsProvider> */}
+
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Time</TableCell>
+            <TableCell>Table 1</TableCell>
+            <TableCell>Table 2</TableCell>
+            <TableCell>Table 3</TableCell>
+            <TableCell>Table 4</TableCell>
+            <TableCell>Table 5</TableCell>
+            <TableCell>Table 6</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </Paper>
-);
+        </TableHead>
+        <TableBody>
+          {demotableContent.map(row => (
+            <TableRow key={row.hour}>
+              <TableCell component="th" scope="row">
+                {row.hour}
+              </TableCell>
+              {row.tables.map((table) => (
+                <TableCell key={row.table} component="th" scope="row">
+                  {renderActions(table.status)}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Paper>
+  );
+};
 
 export default Tables;
 
-{/* <Link to={`${process.env.PUBLIC_URL}/tables/booking/:id`}>Tables booking id</Link>
-<Link to={`${process.env.PUBLIC_URL}/tables/booking/new`}>Tables booking new</Link>
-<Link to={`${process.env.PUBLIC_URL}/tables/events/:id`}>Tables events id</Link>
-<Link to={`${process.env.PUBLIC_URL}/tables/events/new`}>Tables events new</Link> */}

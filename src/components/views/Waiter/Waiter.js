@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const demoContent = [
   {id: '1', status: 'free', order: null},
@@ -64,7 +65,8 @@ const renderActions = status => {
 };
 
 const Waiter = () => (
-  <Paper className={styles.component}>
+  <Paper className={styles.component} elevation={6}>
+    <CssBaseline />
     <Table>
       <TableHead>
         <TableRow>

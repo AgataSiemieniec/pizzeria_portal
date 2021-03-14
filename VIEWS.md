@@ -13,7 +13,7 @@
 # Widok dostepnośc stolików
 
 - '/tables'
-  - wybór daty i godizny
+  - wybór daty i godziny
   - tablea z listą rezerwacji oraz wydarzeń
     - każda kolumna = 1 stolik
     - każdy wiersz = 30 minut
@@ -34,13 +34,13 @@
 - '/waiter'
   - tabela
     - w wierszach stoliki
-    - w kolumnach różne rodzaje informacji (status, czas od osttaniej aktywności)
+    - w kolumnach różne rodzaje informacji (status, czas od ostatniej aktywności)
     - w ostatniej kolumnie dostępne akcje dla danego stolika
 - '/waiter/order/new'
   - numer stolika (edytowalny)
-  - menu roduktu
+  - menu produktów
   - opcje wybranego produktu
-  - zamówienie (zamówione produkty z opcajmi i ceną)
+  - zamówienie (zamówione produkty z opcjami i ceną)
   - kwotę zamówienia
 - '/waiter/order/:id'
   - jak powyższa
@@ -48,7 +48,7 @@
 # Widok kuchni
 - '/kitchen'
   - wyęsiwtlać listę zamówień w kolejności ich złożenia
-  - lista usi zawierać:
+  - lista musi zawierać:
     -numer stolika ( lub zamówienia zdalnego)
     - pełne informacje dotyczące zamówionych dań
   - na liście musi być możliwość oznaczenia zamówienia jako zrealizowane
