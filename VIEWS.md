@@ -45,6 +45,7 @@
 - '/waiter/order/:id'
   - jak powyższa
 
+
 # Widok kuchni
 - '/kitchen'
   - wyęsiwtlać listę zamówień w kolejności ich złożenia

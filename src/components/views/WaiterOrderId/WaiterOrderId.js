@@ -15,7 +15,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 const demoOrder = [
-  {table: '1', name: 'cake', options: ['Zio Stefanos Doughnut'], amount:'1', price:'100'},
+  {table: '1', name: 'breakfast "Zia Giulias Breakfast" + coffee', options: ['Espresso', 'Macchiato'], amount:'1', price:'100'},
 ];
 
 
@@ -34,7 +34,6 @@ const WaiterOrderId = (props) => {
           <Typography align="center" variant="h5" gutterBottom>Order {props.match.params.id}</Typography>
         </Grid>
       </Grid>
-
       <Table>
         <TableHead>
           <TableRow>
@@ -42,7 +41,8 @@ const WaiterOrderId = (props) => {
             <TableCell>Menu</TableCell>
             <TableCell>Options</TableCell>
             <TableCell>Amount</TableCell>
-            <TableCell>Price</TableCell>
+            <TableCell>Price $</TableCell>
+            <TableCell>Total $</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -61,7 +61,10 @@ const WaiterOrderId = (props) => {
                 {order.amount}
               </TableCell>
               <TableCell>
-                {order.price}
+                {order.price} $
+              </TableCell>
+              <TableCell>
+                {order.price} $
               </TableCell>
             </TableRow>
           ))}
