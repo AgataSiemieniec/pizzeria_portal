@@ -81,7 +81,7 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/booked/:id`}
+          to={`${process.env.PUBLIC_URL}/tables/booking/:id`}
         >
           {' '}
           Booked

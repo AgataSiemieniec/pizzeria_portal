@@ -59,7 +59,7 @@ const Login = () => (
           type="submit"
           fullWidth
           component={Link}
-          to={`${process.env.PUBLIC_URL}/login`}>
+          to={`${process.env.PUBLIC_URL}/`}>
           Sign in
         </Button>
         <Grid container>
