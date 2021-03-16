@@ -23,9 +23,6 @@ const demotableContent = [
       {id: '1', status: 'free'},
       {id: '2', status: 'free'},
       {id: '3', status: 'event'},
-      {id: '4', status: 'booked'},
-      {id: '5', status: 'booked'},
-      {id: '6', status: 'free'},
     ],
   },
   {
@@ -34,9 +31,6 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'event'},
-      {id: '4', status: 'booked'},
-      {id: '5', status: 'booked'},
-      {id: '6', status: 'event'},
     ],
   },
   {
@@ -45,9 +39,6 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'booked'},
-      {id: '4', status: 'free'},
-      {id: '5', status: 'booked'},
-      {id: '6', status: 'event'},
     ],
   },
   {
@@ -56,9 +47,6 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'booked'},
-      {id: '4', status: 'free'},
-      {id: '5', status: 'booked'},
-      {id: '6', status: 'event'},
     ],
   },
 ];
@@ -70,10 +58,10 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/bookig/new`}
+          to={`${process.env.PUBLIC_URL}/tables/booking/new`}
         >
           {' '}
-          New Booking
+          -
         </Button>
       );
     case 'booked':
@@ -158,9 +146,6 @@ const Tables = () => {
             <TableCell>Table 1</TableCell>
             <TableCell>Table 2</TableCell>
             <TableCell>Table 3</TableCell>
-            <TableCell>Table 4</TableCell>
-            <TableCell>Table 5</TableCell>
-            <TableCell>Table 6</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

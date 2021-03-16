@@ -45,29 +45,27 @@ const TablesEventsId= (props) => {
             <TableCell>Phone</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {demoEvent.map(row => (
-            <TableRow key={row}>
-              <TableCell component="th" scope="row">
-                {row.table}
-              </TableCell>
-              <TableCell>
-                {row.date}
-              </TableCell>
-              <TableCell>
-                {row.time}
-              </TableCell>
-              <TableCell>
-                {row.people}
-              </TableCell>
-              <TableCell>
-                {row.name}
-              </TableCell>
-              <TableCell>
-                {row.phone}
-              </TableCell>
-            </TableRow>
-          ))}
+        <TableBody>\
+          <TableRow>
+            <TableCell component="th" scope="row">
+              {demoEvent.table}
+            </TableCell>
+            <TableCell>
+              {demoEvent.date}
+            </TableCell>
+            <TableCell>
+              {demoEvent.time}
+            </TableCell>
+            <TableCell>
+              {demoEvent.people}
+            </TableCell>
+            <TableCell>
+              {demoEvent.name}
+            </TableCell>
+            <TableCell>
+              {demoEvent.phone}
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Paper>

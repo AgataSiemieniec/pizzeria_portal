@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
@@ -13,14 +12,14 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import PropTypes from 'prop-types';
+
 
 const demoBooking = [
-  {table: '1', date: '16-03-2021', time: '18:000', people: '3', name: 'John Snow', phone:'71 771 71 71'},
+  {table: '1', date: '16-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
 ];
 
-
 const TablesBookingId= (props) => {
-
   return(
     <Paper className={styles.component} elevation={6}>
       <CssBaseline />
@@ -46,28 +45,26 @@ const TablesBookingId= (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {demoBooking.map(row => (
-            <TableRow key={row}>
-              <TableCell component="th" scope="row">
-                {row.table}
-              </TableCell>
-              <TableCell>
-                {row.date}
-              </TableCell>
-              <TableCell>
-                {row.time}
-              </TableCell>
-              <TableCell>
-                {row.people}
-              </TableCell>
-              <TableCell>
-                {row.name}
-              </TableCell>
-              <TableCell>
-                {row.phone}
-              </TableCell>
-            </TableRow>
-          ))}
+          <TableRow>
+            <TableCell component="th" scope="row">
+              {demoBooking.table}
+            </TableCell>
+            <TableCell>
+              {demoBooking.date}
+            </TableCell>
+            <TableCell>
+              {demoBooking.time}
+            </TableCell>
+            <TableCell>
+              {demoBooking.people}
+            </TableCell>
+            <TableCell>
+              {demoBooking.name}
+            </TableCell>
+            <TableCell>
+              {demoBooking.phone}
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Paper>
