@@ -45,8 +45,8 @@ const TablesEventsId= (props) => {
             <TableCell>Phone</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>\
-          <TableRow>
+        <TableBody>
+          <TableRow >
             <TableCell component="th" scope="row">
               {demoEvent.table}
             </TableCell>

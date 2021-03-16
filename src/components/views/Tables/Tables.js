@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
 // import DateFnsUtils from '@date-io/date-fns';
 // import {
 //   MuiPickersUtilsProvider,
@@ -73,7 +72,7 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/booking/:id`}
+          to={`${process.env.PUBLIC_URL}/tables/booking/aaa`}
         >
           {' '}
           Booked
@@ -84,7 +83,7 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/events/:id`}
+          to={`${process.env.PUBLIC_URL}/tables/events/bbb`}
         >
           {' '}
           Event
@@ -114,7 +113,7 @@ const Tables = () => {
           </Button>
         </Grid>
         <Grid item xs={10} >
-          <Typography align="center" variant="h5" gutterBottom>Tables availability</Typography>
+          <Typography align="center" variant="h5">Tables availability</Typography>
         </Grid>
       </Grid>
       {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -166,7 +165,7 @@ const Tables = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {demotableContent.map(row => (
+          {demotableContent.map((row) => (
             <TableRow key={row.hour}>
               <TableCell component="th" scope="row">
                 {row.hour}
