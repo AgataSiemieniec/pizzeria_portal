@@ -8,7 +8,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import HomeIcon from '@material-ui/icons/Home';
+import Typography from '@material-ui/core/Typography';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 // import DateFnsUtils from '@date-io/date-fns';
 // import {
 //   MuiPickersUtilsProvider,
@@ -100,6 +104,19 @@ const Tables = () => {
 
   return (
     <Paper className={styles.component}>
+      <CssBaseline />
+      <Grid container justify="space-between">
+        <Grid item xs={2}>
+          <Button
+            component={Link}
+            to={`${process.env.PUBLIC_URL}/waiter`}>
+            <HomeIcon />
+          </Button>
+        </Grid>
+        <Grid item xs={10} >
+          <Typography align="center" variant="h5" gutterBottom>Tables availability</Typography>
+        </Grid>
+      </Grid>
       {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid container justify="space-around">
           <KeyboardDatePicker
@@ -163,6 +180,22 @@ const Tables = () => {
           ))}
         </TableBody>
       </Table>
+      <Grid className={styles.buttonGroup}>
+        <Button
+          className={styles.button}
+          variant="contained"
+          component={Link}
+          to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
+          Add new booking
+        </Button>
+        <Button
+          className={styles.button}
+          variant="contained"
+          component={Link}
+          to={`${process.env.PUBLIC_URL}/tables/events/new`}>
+          Add new event
+        </Button>
+      </Grid>
     </Paper>
   );
 };
