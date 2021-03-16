@@ -14,15 +14,15 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-const demoOrder = [
-  {table: '1', name: 'breakfast "Zia Giulias Breakfast" + coffee', options: ['Espresso', 'Macchiato'], amount:'1', price:'100'},
+const demoBooking = [
+  {table: '1', date: '16-03-2021', time: '18:000', people: '3', name: 'John Snow', phone:'71 771 71 71'},
 ];
 
 
 const TablesBookingId= (props) => {
 
   return(
-    <Paper className={styles.component}>
+    <Paper className={styles.component} elevation={6}>
       <CssBaseline />
       <Grid container justify="space-between">
         <Grid item xs={2}>
@@ -31,40 +31,40 @@ const TablesBookingId= (props) => {
           </Button>
         </Grid>
         <Grid item xs={10} >
-          <Typography align="center" variant="h5" gutterBottom>Order {props.match.params.id}</Typography>
+          <Typography align="center" variant="h5" gutterBottom>Booking {props.match.params.id}</Typography>
         </Grid>
       </Grid>
       <Table>
         <TableHead>
           <TableRow>
             <TableCell>Table</TableCell>
-            <TableCell>Menu</TableCell>
-            <TableCell>Options</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Price $</TableCell>
-            <TableCell>Total $</TableCell>
+            <TableCell>Date</TableCell>
+            <TableCell>Time</TableCell>
+            <TableCell>People</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Phone</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {demoOrder.map(order => (
-            <TableRow key={order}>
+          {demoBooking.map(row => (
+            <TableRow key={row}>
               <TableCell component="th" scope="row">
-                {order.table}
+                {row.table}
               </TableCell>
               <TableCell>
-                {order.name}
+                {row.date}
               </TableCell>
               <TableCell>
-                {order.options.join(',')}
+                {row.time}
               </TableCell>
               <TableCell>
-                {order.amount}
+                {row.people}
               </TableCell>
               <TableCell>
-                {order.price} $
+                {row.name}
               </TableCell>
               <TableCell>
-                {order.price} $
+                {row.phone}
               </TableCell>
             </TableRow>
           ))}
