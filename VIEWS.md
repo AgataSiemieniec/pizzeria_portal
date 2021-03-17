@@ -48,7 +48,7 @@
 
 # Widok kuchni
 - '/kitchen'
-  - wyęsiwtlać listę zamówień w kolejności ich złożenia
+  - wyświetlać listę zamówień w kolejności ich złożenia
   - lista musi zawierać:
     -numer stolika ( lub zamówienia zdalnego)
     - pełne informacje dotyczące zamówionych dań

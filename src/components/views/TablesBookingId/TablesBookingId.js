@@ -15,9 +15,9 @@ import TableRow from '@material-ui/core/TableRow';
 import PropTypes from 'prop-types';
 
 
-const demoBooking = [
-  {table: '1', date: '16-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
-];
+// const demoBookingId = [
+//   {table: '1', date: '16-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
+// ];
 
 const TablesBookingId= (props) => {
   return(
@@ -36,9 +36,9 @@ const TablesBookingId= (props) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Table</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Time</TableCell>
+            <TableCell>Table ?</TableCell>
+            <TableCell>Date ?</TableCell>
+            <TableCell>Time ?</TableCell>
             <TableCell>People</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Phone</TableCell>
@@ -46,24 +46,6 @@ const TablesBookingId= (props) => {
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell component="th" scope="row">
-              {demoBooking.table}
-            </TableCell>
-            <TableCell>
-              {demoBooking.date}
-            </TableCell>
-            <TableCell>
-              {demoBooking.time}
-            </TableCell>
-            <TableCell>
-              {demoBooking.people}
-            </TableCell>
-            <TableCell>
-              {demoBooking.name}
-            </TableCell>
-            <TableCell>
-              {demoBooking.phone}
-            </TableCell>
           </TableRow>
         </TableBody>
       </Table>

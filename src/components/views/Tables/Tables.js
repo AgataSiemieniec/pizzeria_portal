@@ -12,12 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
-// import DateFnsUtils from '@date-io/date-fns';
-// import {
-//   MuiPickersUtilsProvider,
-//   KeyboardTimePicker,
-//   KeyboardDatePicker,
-// } from '@material-ui/pickers';
 
 const demotableContent = [
   {
@@ -54,7 +48,7 @@ const demotableContent = [
   },
 ];
 
-const renderActions = status => {
+const renderActions = (status) => {
   switch (status) {
     case 'free':
       return (
@@ -72,7 +66,7 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/booking/aaa`}
+          to={`${process.env.PUBLIC_URL}/tables/booking/:id`}
         >
           {' '}
           Booked
@@ -83,7 +77,7 @@ const renderActions = status => {
         <Button
           variant="contained"
           component={Link}
-          to={`${process.env.PUBLIC_URL}/tables/events/bbb`}
+          to={`${process.env.PUBLIC_URL}/tables/events/:id`}
         >
           {' '}
           Event
@@ -95,12 +89,6 @@ const renderActions = status => {
 };
 
 const Tables = () => {
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
   return (
     <Paper className={styles.component}>
       <CssBaseline />
@@ -113,7 +101,7 @@ const Tables = () => {
           </Button>
         </Grid>
         <Grid item xs={10} >
-          <Typography align="center" variant="h5">Tables availability</Typography>
+          <Typography align="center" variant="h5" gutterBottom>Tables availability</Typography>
         </Grid>
       </Grid>
       {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -165,7 +153,7 @@ const Tables = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {demotableContent.map((row) => (
+          {demotableContent.map(row => (
             <TableRow key={row.hour}>
               <TableCell component="th" scope="row">
                 {row.hour}

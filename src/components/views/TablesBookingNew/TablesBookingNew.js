@@ -15,9 +15,9 @@ import TableRow from '@material-ui/core/TableRow';
 import PropTypes from 'prop-types';
 
 
-const demoBooking = [
-  {table: '1', date: '16-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
-];
+// const demoBooking = [
+//   {table: '1', date: '16-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
+// ];
 
 const TablesBookingNew= (props) => {
   return(
@@ -47,22 +47,16 @@ const TablesBookingNew= (props) => {
         <TableBody>
           <TableRow>
             <TableCell component="th" scope="row">
-              {demoBooking.table}
             </TableCell>
             <TableCell>
-              {demoBooking.date}
             </TableCell>
             <TableCell>
-              {demoBooking.time}
             </TableCell>
             <TableCell>
-              {demoBooking.people}
             </TableCell>
             <TableCell>
-              {demoBooking.name}
             </TableCell>
             <TableCell>
-              {demoBooking.phone}
             </TableCell>
           </TableRow>
         </TableBody>
