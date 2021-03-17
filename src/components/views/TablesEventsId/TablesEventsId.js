@@ -15,7 +15,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 const demoEvent = [
-  {table: '2', date: '19-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
+  {id: '1', table: '2', date: '19-03-2021', time: '18:00', people: '3', name: 'John Snow', phone:'71 771 71 71'},
 ];
 
 

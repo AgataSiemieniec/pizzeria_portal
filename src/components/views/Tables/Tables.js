@@ -90,7 +90,7 @@ const renderActions = (status) => {
 
 const Tables = () => {
   return (
-    <Paper className={styles.component}>
+    <Paper className={styles.component} elevation={6}>
       <CssBaseline />
       <Grid container justify="space-between">
         <Grid item xs={2}>
