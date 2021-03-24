@@ -13,11 +13,13 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
+const FETCH_UPDATE = createActionName('FETCH_ERROR');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
+export const fetchUpdate = payload => ({ payload, type: FETCH_UPDATE });
 
 /* thunk creators */
 export const fetchFromAPI = () => {
@@ -28,6 +30,21 @@ export const fetchFromAPI = () => {
       .get(`${api.url}/api/${api.tables}`)
       .then(res => {
         dispatch(fetchSuccess(res.data));
+      })
+      .catch(err => {
+        dispatch(fetchError(err.message || true));
+      });
+  };
+};
+
+export const fetchUpdateStatus = (newstatus, tableid) => {
+  return (dispatch, getState) => {
+    dispatch(fetchStarted());
+
+    Axios
+      .put(`${api.url}/api/${api.tables}/${tableid}`, {status: newstatus} )
+      .then(res => {
+        dispatch(fetchUpdate(res.data));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
@@ -64,6 +81,16 @@ export default function reducer(statePart = [], action = {}) {
           active: false,
           error: action.payload,
         },
+      };
+    }
+    case FETCH_UPDATE: {
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: false,
+        },
+        data: action.payload,
       };
     }
     default:

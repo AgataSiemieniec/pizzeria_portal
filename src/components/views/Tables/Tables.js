@@ -20,6 +20,9 @@ const demotableContent = [
       {id: '1', status: 'free'},
       {id: '2', status: 'free'},
       {id: '3', status: 'event'},
+      {id: '4', status: 'free'},
+      {id: '5', status: 'free'},
+      {id: '6', status: 'event'},
     ],
   },
   {
@@ -28,6 +31,9 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'event'},
+      {id: '4', status: 'booked'},
+      {id: '5', status: 'event'},
+      {id: '6', status: 'event'},
     ],
   },
   {
@@ -36,6 +42,9 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'booked'},
+      {id: '4', status: 'booked'},
+      {id: '5', status: 'event'},
+      {id: '6', status: 'booked'},
     ],
   },
   {
@@ -44,6 +53,9 @@ const demotableContent = [
       {id: '1', status: 'booked'},
       {id: '2', status: 'event'},
       {id: '3', status: 'booked'},
+      {id: '4', status: 'booked'},
+      {id: '5', status: 'event'},
+      {id: '6', status: 'booked'},
     ],
   },
 ];
