@@ -10,16 +10,19 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
+    updateStatus: PropTypes.func,
     loading: PropTypes.shape({
       active: PropTypes.bool,
       error: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
     }),
-    tables: PropTypes.object,
+    tables: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
   }
 
   componentDidMount(){
@@ -27,15 +30,19 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status){
+  renderActions(tableId, status){
+    const { updateStatus } = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
+            <Button onClick={() => updateStatus(tableId, 'thinking')}>
+              thinking
+            </Button>
             <Button
               component={Link}
               to={`${process.env.PUBLIC_URL}/waiter/order/new`}
+              onClick={() => updateStatus(tableId, 'new order')}
             >
               {' '}
               new order
@@ -47,25 +54,30 @@ class Waiter extends React.Component {
           <Button
             component={Link}
             to={`${process.env.PUBLIC_URL}/waiter/order/new`}
+            onClick={() => updateStatus(tableId, 'new order')}
           >
             new order
           </Button>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => updateStatus(tableId, 'prepared')}>
+          prepared
+          </Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => updateStatus(tableId, 'delivered')}>
+          delivered
+          </Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => updateStatus(tableId, 'paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => updateStatus(tableId, 'free')}>free</Button>
         );
       default:
         return null;
@@ -92,6 +104,9 @@ class Waiter extends React.Component {
       return (
         <Paper className={styles.component} elevation={6}>
           <CssBaseline />
+          <Grid item xs={10} >
+            <Typography align="center" variant="h5" gutterBottom>Waiter</Typography>
+          </Grid>
           <Table>
             <TableHead>
               <TableRow>
@@ -118,7 +133,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.id, row.status)}
                   </TableCell>
                 </TableRow>
               ))}
